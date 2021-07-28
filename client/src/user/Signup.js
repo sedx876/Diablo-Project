@@ -83,7 +83,9 @@ class Signup extends Component{
         <Button type='submit' variant='primary' onClick={this.clickSubmit}>
           Register
         </Button>
+        <br/>
       </Form>
+      <br/>
     </>
   )
 

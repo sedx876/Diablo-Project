@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/home.css'
 import { Card } from 'react-bootstrap'
 import D3 from '../images/D3.png'
+import {Link} from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -16,7 +17,13 @@ const Home = () => {
               other in-game essentials!
             </p>
             <h4 className='text-warning'>
-              LogIn or Register
+              LogIn
+              <br/> 
+              or 
+              <br/>
+              <Link to='/signup'>
+                Register
+              </Link>
             </h4>
           </Card.Text>
         </Card.Body>
