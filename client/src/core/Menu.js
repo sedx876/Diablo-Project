@@ -9,9 +9,11 @@ const Menu = () => {
   return (
     <Navbar bg="light" expand="lg">
   
-    <Navbar.Brand href="#home" className='text-primary'>
-      <img id='navImg' src={D3}/>
-      DiabloPlayrPad
+    <Navbar.Brand href="#home" className='text-primary' id='navBrand'>
+              <Link to='/' id='navBrand'>
+                <img id='navImg' src={D3}/>
+                DiabloPlayrPad
+              </Link>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
