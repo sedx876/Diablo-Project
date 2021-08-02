@@ -66,10 +66,10 @@ exports.createCharacter = (req, res, next) => {
     let character = new Character(fields)
       req.profile.hashed_password = undefined
       req.profile.salt = undefined
-      post.postedBy = req.profile
+      character.postedBy = req.profile
     if (files.photo){
-      post.photo.data = fs.readFileSync(files.photo.path)
-      post.photo.contentType = files.photo.type
+      character.photo.data = fs.readFileSync(files.photo.path)
+      character.photo.contentType = files.photo.type
     }
     character.save((err, result) => {
       if (err){
