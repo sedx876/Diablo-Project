@@ -20,39 +20,39 @@ exports.characterById = (req, res, next, id) => {
     })
 }
 
-exports.getCharacters = (req, res) => {
-  const characters = Character.find()
-    .populate('postedBy', '_id name')
-    //.select white listing attrs make sure if they are required later
-    .select('_id title characterKlass helm shoulders gloves chestArmor belt pants boots bracers amulet ring1 ring2 weapon offhand gemNotes kanaisCube activeSkills passiveSkills generalBuildNotes')
-    .then((characters) =>{
-      res.json({ characters})
-    })
-    .catch(err => console.table(err))
-}
-
-// exports.getCharacters = async (req, res) => {
-//   const currentPage = req.query.page || 1
-//   const perPage = 6
-//   let totalItems
-
-//   const characters = await Character.find()
-//     .countDocuments()
-//     .then(count => {
-//       totalItems = count 
-//       return Character.find()
-//         .skip((currentPage - 1) * perPage)
-//         .populate('comments', 'text created')
-//         .populate('postedBy', '_id name')
-//         .populate('comments.postedBy', '_id name')
-//         .limit(perPage)
-//         .sort({ created: -1 })
-//     })
-//     .then(characters => {
-//       res.status(200).json(characters)
+// exports.getCharacters = (req, res) => {
+//   const characters = Character.find()
+//     .populate('postedBy', '_id name')
+//     //.select white listing attrs make sure if they are required later
+//     .select('_id title characterKlass helm shoulders gloves chestArmor belt pants boots bracers amulet ring1 ring2 weapon offhand gemNotes kanaisCube activeSkills passiveSkills generalBuildNotes')
+//     .then((characters) =>{
+//       res.json({ characters})
 //     })
 //     .catch(err => console.table(err))
 // }
+
+exports.getCharacters = async (req, res) => {
+  const currentPage = req.query.page || 1
+  const perPage = 6
+  let totalItems
+
+  const characters = await Character.find()
+    .countDocuments()
+    .then(count => {
+      totalItems = count 
+      return Character.find()
+        .skip((currentPage - 1) * perPage)
+        .populate('comments', 'text created')
+        .populate('postedBy', '_id name')
+        .populate('comments.postedBy', '_id name')
+        .limit(perPage)
+        .sort({ created: -1 })
+    })
+    .then(characters => {
+      res.status(200).json(characters)
+    })
+    .catch(err => console.table(err))
+}
 
 exports.createCharacter = (req, res, next) => {
   let form = new formidable.IncomingForm()
