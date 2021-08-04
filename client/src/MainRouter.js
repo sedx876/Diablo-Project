@@ -7,6 +7,7 @@ import Home from './core/Home'
 import Signup from './user/Signup'
 import Signin from './user/Signin'
 import NewCharacter from "./character/NewCharacter"
+import Characters from './character/Characters'
 
 
 const MainRouter = () => {
@@ -18,6 +19,7 @@ const MainRouter = () => {
           <Route path='/signup' component={Signup}/>
           <Route path='/signin' component={Signin}/>
           <PrivateRoute exact path="/character/create" component={NewCharacter} />
+          <Route path='/characters' component={Characters}/>
         </Switch>
       <Footer/>
     </div>
