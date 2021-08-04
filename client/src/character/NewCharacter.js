@@ -113,269 +113,284 @@ class NewCharacter extends Component{
     
     <Form>
 
-      <Row className="align-items-center">
-        <Form.Group className="align-items-center" controlId='formFileSm'>
-          <Form.Label>Image</Form.Label>
-            <Form.Control
-              size="sm"
-              type='file'
-              placeholder='Upload Image'
-              value={photo}
-              accept="image/*"
-              onChange={this.handleChange('photo')}
-            ></Form.Control>
-        </Form.Group>
-      </Row>
+      <div className='row'>
+        <div className="form-group">
+          <label className="text-primary">Post Photo</label>
+          <input
+            onChange={this.handleChange("photo")}
+            type="file"
+            accept="image/*"
+            className="form-control"
+          />
+        </div>
+      </div>
       
-      <Row>
-        <Col>
+      <br/>
 
-          <Form.Group  className="" controlId='title'>
-          <Form.Label>Title</Form.Label>
-          <Form.Control
-            size="sm"
-            type='text'
-            placeholder='Enter Title'
+      <div className='row'>
+
+        <div className='col'>
+
+        <div className="form-group">
+          <label className="text-secondary">Title</label>
+          <input
+            onChange={this.handleChange("title")}
+            type="text"
+            className="form-control"
             value={title}
-            onChange={this.handleChange('title')}
-          ></Form.Control>
-          </Form.Group>
+          />
+        </div>
 
-          <Form.Group controlId='helm'>
-          <Form.Label>Helm</Form.Label>
-          <Form.Control
-            size="sm"
-            type='text'
-            placeholder='Helm'
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">Helm</label>
+          <input
+            onChange={this.handleChange("helm")}
+            type="text"
+            className="form-control"
             value={helm}
-            onChange={this.handleChange('helm')}
-          ></Form.Control>
-        </Form.Group>
+          />
+        </div>
 
-        <Form.Group controlId='gloves'>
-        <Form.Label>Gloves</Form.Label>
-          <Form.Control
-            size="sm"
-            type='text'
-            placeholder='Gloves'
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">Gloves</label>
+          <input
+            onChange={this.handleChange("gloves")}
+            type="text"
+            className="form-control"
             value={gloves}
-            onChange={this.handleChange('gloves')}
-          ></Form.Control>
-        </Form.Group>
+          />
+        </div>
 
-        <Form.Group controlId='belt'>
-        <Form.Label>Belt</Form.Label>
-          <Form.Control
-            size="sm"
-            type='text'
-            placeholder='Belt'
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">Belt</label>
+          <input
+            onChange={this.handleChange("belt")}
+            type="text"
+            className="form-control"
             value={belt}
-            onChange={this.handleChange('belt')}
-          ></Form.Control>
-        </Form.Group>
+          />
+        </div>
 
-        <Form.Group controlId='boots'>
-        <Form.Label>Boots</Form.Label>
-          <Form.Control
-            size="sm"
-            type='text'
-            placeholder='Boots'
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">Boots</label>
+          <input
+            onChange={this.handleChange("boots")}
+            type="text"
+            className="form-control"
             value={boots}
-            onChange={this.handleChange('boots')}
-          ></Form.Control>
-        </Form.Group>
+          />
+        </div>
 
-        <Form.Group controlId='amulet'>
-        <Form.Label>Amulet</Form.Label>
-          <Form.Control
-            size="sm"
-            type='text'
-            placeholder='Amulet'
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">Amulet</label>
+          <input
+            onChange={this.handleChange("amulet")}
+            type="text"
+            className="form-control"
             value={amulet}
-            onChange={this.handleChange('amulet')}
-          ></Form.Control>
-        </Form.Group>
+          />
+        </div>
 
-        <Form.Group controlId='ring2'>
-        <Form.Label>Ring 2</Form.Label>
-          <Form.Control
-            size="sm"
-            type='text'
-            placeholder='Ring 2'
-            value={ring2}
-            onChange={this.handleChange('ring2')}
-          ></Form.Control>
-        </Form.Group>
+        <br/>
 
-        <Form.Group controlId='offhand'>
-        <Form.Label>OffHand</Form.Label>
-          <Form.Control
-            size="sm"
-            type='text'
-            placeholder='OffHand'
-            value={offhand}
-            onChange={this.handleChange('offhand')}
-          ></Form.Control>
-        </Form.Group>
-
-        <Form.Group controlId='kanaisCube'>
-        <Form.Label>Kanai's Cube</Form.Label>
-          <Form.Control
-            as="textarea" 
-            rows={3}
-            size="sm"
-            type='text'
-            placeholder="Kanai's Cube"
-            value={kanaisCube}
-            onChange={this.handleChange('kanaisCube')}
-          ></Form.Control>
-        </Form.Group>
-
-        <Form.Group controlId='passiveSkills'>
-        <Form.Label>Passive Skills</Form.Label>
-          <Form.Control
-            as="textarea" 
-            rows={3}
-            size="sm"
-            type='text'
-            placeholder='Passive Skills'
-            value={passiveSkills}
-            onChange={this.handleChange('passiveSkills')}
-          ></Form.Control>
-        </Form.Group>
-
-        </Col>
-
-
-
-        <Col>
-        
-        <Form.Group controlId='characterKlass'>
-        <Form.Label>Character Class</Form.Label>
-          <Form.Control
-            size="sm"
-            type='text'
-            placeholder='Ex: Demon Hunter, Barbarian'
-            value={characterKlass}
-            onChange={this.handleChange('characterKlass')}
-          ></Form.Control>
-        </Form.Group>
-
-        <Form.Group controlId='shoulders'>
-        <Form.Label>Shoulders</Form.Label>
-          <Form.Control
-            size="sm"
-            type='text'
-            placeholder='Shoulders'
-            value={shoulders}
-            onChange={this.handleChange('shoulders')}
-          ></Form.Control>
-        </Form.Group>
-
-        <Form.Group controlId='chestArmor'>
-        <Form.Label>Chest Armor</Form.Label>
-          <Form.Control
-            size="sm"
-            type='text'
-            placeholder='Chest Armor'
-            value={chestArmor}
-            onChange={this.handleChange('chestArmor')}
-          ></Form.Control>
-        </Form.Group>
-
-        <Form.Group controlId='pants'>
-        <Form.Label>Pants</Form.Label>
-          <Form.Control
-            size="sm"
-            type='text'
-            placeholder='Pants'
-            value={pants}
-            onChange={this.handleChange('pants')}
-          ></Form.Control>
-        </Form.Group>
-
-        <Form.Group controlId='bracers'>
-        <Form.Label>Bracers</Form.Label>
-          <Form.Control
-            size="sm"
-            type='text'
-            placeholder='Bracers'
-            value={bracers}
-            onChange={this.handleChange('bracers')}
-          ></Form.Control>
-        </Form.Group>
-
-        <Form.Group controlId='ring1'>
-        <Form.Label>Ring 1</Form.Label>
-          <Form.Control
-            size="sm"
-            type='text'
-            placeholder='Ring 1'
+        <div className="form-group">
+          <label className="text-secondary">Ring 1</label>
+          <input
+            onChange={this.handleChange("ring1")}
+            type="text"
+            className="form-control"
             value={ring1}
-            onChange={this.handleChange('ring1')}
-          ></Form.Control>
-        </Form.Group>
+          />
+        </div>
 
-        <Form.Group controlId='weapon'>
-        <Form.Label>Weapon</Form.Label>
-          <Form.Control
-            size="sm"
-            type='text'
-            placeholder='Weapon'
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">OffHand</label>
+          <input
+            onChange={this.handleChange("offhand")}
+            type="text"
+            className="form-control"
+            value={offhand}
+          />
+        </div>
+
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">Kanai's Cube</label>
+          <textarea
+            onChange={this.handleChange("kanaisCube")}
+            type="text"
+            className="form-control"
+            value={kanaisCube}
+          />
+        </div>
+
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">Passive Skills</label>
+          <textarea
+            onChange={this.handleChange("passiveSkills")}
+            type="text"
+            className="form-control"
+            value={passiveSkills}
+          />
+        </div>
+
+        </div>
+
+
+        <div className='col'>
+          
+        <div className="form-group">
+          <label className="text-secondary">Character Class</label>
+          <input
+            onChange={this.handleChange("characterKlass")}
+            type="text"
+            className="form-control"
+            placeholder='EX: Demon Hunter..Barbarian'
+            value={characterKlass}
+          />
+        </div>
+
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">Shoulders</label>
+          <input
+            onChange={this.handleChange("shoulders")}
+            type="text"
+            className="form-control"
+            value={shoulders}
+          />
+        </div>
+
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">Chest Armor</label>
+          <input
+            onChange={this.handleChange("chestArmor")}
+            type="text"
+            className="form-control"
+            value={chestArmor}
+          />
+        </div>
+
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">Pants</label>
+          <input
+            onChange={this.handleChange("pants")}
+            type="text"
+            className="form-control"
+            value={pants}
+          />
+        </div>
+
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">Bracers</label>
+          <input
+            onChange={this.handleChange("bracers")}
+            type="text"
+            className="form-control"
+            value={bracers}
+          />
+        </div>
+
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">Ring 2</label>
+          <input
+            onChange={this.handleChange("ring2")}
+            type="text"
+            className="form-control"
+            value={ring2}
+          />
+        </div>
+
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">Weapon</label>
+          <input
+            onChange={this.handleChange("weapon")}
+            type="text"
+            className="form-control"
             value={weapon}
-            onChange={this.handleChange('weapon')}
-          ></Form.Control>
-        </Form.Group>
+          />
+        </div>
 
-        <Form.Group controlId='gemNotes'>
-        <Form.Label>Gem Notes</Form.Label>
-          <Form.Control
-            as="textarea" 
-            rows={3}
-            size="sm"
-            type='text'
-            placeholder='Gem Notes'
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">Gem Notes</label>
+          <textarea
+            onChange={this.handleChange("gemNotes")}
+            type="text"
+            className="form-control"
             value={gemNotes}
-            onChange={this.handleChange('gemNotes')}
-          ></Form.Control>
-        </Form.Group>
+          />
+        </div>
 
-        <Form.Group controlId='activeSkills'>
-        <Form.Label>Active Skills</Form.Label>
-          <Form.Control
-            as="textarea" 
-            rows={3}
-            size="sm"
-            type='text'
-            placeholder='Active Skills'
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">Active Skills</label>
+          <textarea
+            onChange={this.handleChange("activeSkills")}
+            type="text"
+            className="form-control"
             value={activeSkills}
-            onChange={this.handleChange('activeSkills')}
-          ></Form.Control>
-        </Form.Group>
+          />
+        </div>
 
-        <Form.Group controlId='generalBuildNotes'>
-        <Form.Label>General Build Notes</Form.Label>
-          <Form.Control
-            as="textarea" 
-            rows={3}
-            size="sm"
-            type='text'
-            placeholder='General Build Notes'
+        <br/>
+
+        <div className="form-group">
+          <label className="text-secondary">General Build Notes</label>
+          <textarea
+            onChange={this.handleChange("generalBuildNotes")}
+            type="text"
+            className="form-control"
             value={generalBuildNotes}
-            onChange={this.handleChange('generalBuildNotes')}
-          ></Form.Control>
-        </Form.Group>
+          />
+        </div>
 
-        </Col>
+        </div>
 
-      </Row>
 
+      </div>
+      <br/>
+
+      <div className='row'>
       <button
         onClick={this.clickSubmit}
-        className="btn btn-raised btn-outline-primary"
+        className="btn btn-raised btn-outline-primary d-grid gap-2 col-6 mx-auto"
       >
         Create Character
       </button>
+      </div>
+      <br/>
+      
+
+      
     </Form>
     </Container>
   )
@@ -411,7 +426,8 @@ class NewCharacter extends Component{
 
     return(
       <>
-      <h2 className="mt-5 mb-5">Create a New Character</h2>
+      <br/>
+      <h2 className="text-center">Create a New Character</h2>
       <div
             className="alert alert-danger"
             style={{ display: error ? "" : "none" }}
