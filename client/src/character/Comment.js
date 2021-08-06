@@ -36,7 +36,7 @@ class Comment extends Component {
       if (this.isValid()) {
         const userId = isAuthenticated().user._id
         const token = isAuthenticated().token
-        const characterId = this.props.postId
+        const characterId = this.props.characterId
         comment(userId, token, characterId, { text: this.state.text }).then(
           data => {
             if (data.error) {

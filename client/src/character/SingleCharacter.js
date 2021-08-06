@@ -87,6 +87,7 @@ class SingleCharacter extends Component {
     const posterName = character.postedBy ? character.postedBy.name : ' Unknown'
     const { like, likes } = this.state
   return (
+    <>
     <div className="card-body">
       <img
         src={`${process.env.REACT_APP_API_URL}/character/photo/${character._id}`}
@@ -101,10 +102,10 @@ class SingleCharacter extends Component {
       />
         {like ? (
           <h3 onClick={this.likeToggle}>
-            <i
+            {/* <i
               className="fa fa-thumbs-up text-success bg-light"
               style={{ padding: '10px', borderRadius: '50%' }}
-          />
+          /> */}
 					{' '}
           {likes} Like
           </h3>
@@ -118,12 +119,39 @@ class SingleCharacter extends Component {
           {likes} Like
         </h3>
         )}
-        {/* <p className="card-text">{post.body}</p>
+        <p className="card border-light mb-3" style={{maxWidth: "15rem"}}>
+          Built by <Link to={`${posterId}`}>{posterName} </Link>
+          on {new Date(character.created).toDateString()}
+        </p> 
+        <div class="card border-light mb-3" style={{maxWidth: "50rem"}}>
+        <div class="card-title text-center">{character.title} for {character.characterKlass}</div>
+        <div class="card-body">
+        <h5 class="card-title">Helm: {character.helm}</h5>
+        <h5 class="card-title">Shoulders: {character.shoulders}</h5>
+        <h5 class="card-title">Gloves: {character.gloves}</h5>
+        <h5 class="card-title">Chest Armor: {character.chestArmor}</h5>
+        <h5 class="card-title">Belt: {character.belt}</h5>
+        <h5 class="card-title">Pants: {character.pants}</h5>
+        <h5 class="card-title">Boots: {character.boots}</h5>
+        <h5 class="card-title">Bracers: {character.bracers}</h5>
+        <h5 class="card-title">Amulet: {character.amulet}</h5>
+        <h5 class="card-title">Ring 1: {character.ring1}</h5>
+        <h5 class="card-title">Ring 2: {character.ring2}</h5>
+        <h5 class="card-title">Weapon: {character.weapon}</h5>
+        <h5 class="card-title">Offhand: {character.offhand}</h5>
+        <h5 class="card-title">Gem Notes: {character.gemNotes}</h5>
+        <br/>
+        <h5 class="card-title">Kanai's Cube: {character.kanaisCube}</h5>
+        <br/>
+        <h5 class="card-title">Active Skills: {character.activeSkills}</h5>
+        <br/>
+        <h5 class="card-title">Passive Skills: {character.passiveSkills}</h5>
+        <br/>
+        <h5 class="card-title">General Build Notes: {character.generalBuildNotes}</h5>
+        </div>
+        </div>
         <br />
-        <p className="font-italic mark">
-          Posted by <Link to={`${posterId}`}>{posterName} </Link>
-          on {new Date(post.created).toDateString()}
-        </p> */}
+        
         <div className="d-inline-block">
           <Link to={`/`} className="btn btn-raised btn-primary btn-sm mr-5">
             Back to posts
@@ -159,6 +187,7 @@ class SingleCharacter extends Component {
         </div>
       </div>
     </div>
+    </>
 		)
   }
 
