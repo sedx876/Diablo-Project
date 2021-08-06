@@ -17,7 +17,7 @@ class Profile extends Component {
       redirectToSignin: false,
       following: false,
       error: "",
-      posts: []
+      characters: []
     }
   }
 
