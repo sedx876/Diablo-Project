@@ -58,7 +58,7 @@ class Characters extends Component{
 											onError={i =>
                     (i.target.src = `${DefaultPost}`)
                     }
-                    className="img-thunbnail mb-2"
+                    className="card-img-top"
                     style={{ height: "200px", width: "100%" }}
                   />
                   <h5 className="card-title">{character.title}</h5>
