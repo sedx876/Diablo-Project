@@ -8,6 +8,8 @@ import Signup from './user/Signup'
 import Signin from './user/Signin'
 import NewCharacter from "./character/NewCharacter"
 import Characters from './character/Characters'
+import Profile from './user/Profile'
+import SingleCharacter from "./character/SingleCharacter"
 
 
 const MainRouter = () => {
@@ -20,6 +22,8 @@ const MainRouter = () => {
           <Route path='/signin' component={Signin}/>
           <PrivateRoute exact path="/character/create" component={NewCharacter} />
           <Route path='/characters' component={Characters}/>
+          <PrivateRoute exact path='/user/:userId' component={Profile}/>
+          <Route exact path="/character/:characterId" component={SingleCharacter} />
         </Switch>
       <Footer/>
     </div>

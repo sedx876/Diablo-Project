@@ -51,18 +51,18 @@ class Profile extends Component {
     } else {
       let following = this.checkFollow(data)
       this.setState({ user: data, following })
-      this.loadPosts(data._id)
+      this.loadCharacters(data._id)
     }
   })
   }
 
-  loadPosts = userId => {
+  loadCharacters = userId => {
     const token = isAuthenticated().token
     listByUser(userId, token).then(data => {
     if (data.error) {
       console.log(data.error)
     } else {
-      this.setState({ posts: data })
+      this.setState({ characters: data })
     }
   })
   }
@@ -78,7 +78,7 @@ class Profile extends Component {
   }
 
   render() {
-    const { redirectToSignin, user, posts } = this.state
+    const { redirectToSignin, user, characters } = this.state
     if (redirectToSignin) return <Redirect to="/signin" />
     const photoUrl = user._id
       ? `${process.env.REACT_APP_API_URL}/user/photo/${
@@ -88,7 +88,7 @@ class Profile extends Component {
     return (
       <div className='container'>
         <h2 className='mt-5 mb-5 text-primary text-center'>
-          <strong>sociaList Profile</strong>
+          <strong>D3PlayrPad Profile</strong>
         </h2>
         <div className='row'>
         <div className='col-md-6'>
@@ -115,9 +115,9 @@ class Profile extends Component {
               <div className="d-inline-block">
                 <Link
                   className="btn btn-raised btn-info mr-4"
-                  to={`/post/create`}
+                  to={`/character/create`}
                 >
-                  Create Post
+                  Create Character
                 </Link>
                 <Link
                   className="btn btn-raised btn-success mr-4"
@@ -169,7 +169,7 @@ class Profile extends Component {
             <ProfileTabs
               followers={user.followers}
               following={user.following}
-              posts={posts}
+              characters={characters}
             />
             </div>
           </div>
