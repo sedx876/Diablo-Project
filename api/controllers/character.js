@@ -98,9 +98,9 @@ exports.charactersByUser = (req, res) => {
 }
 
 exports.isPoster = (req, res, next) => {
-  let sameUser = req.post && req.auth && req.post.postedBy._id == req.auth._id
-  let adminUser = req.post && req.auth && req.auth.role === 'admin'
-    console.log("req.post ", req.post, " req.auth ", req.auth)
+  let sameUser = req.character && req.auth && req.character.postedBy._id == req.auth._id
+  let adminUser = req.character && req.auth && req.auth.role === 'admin'
+    console.log("req.post ", req.character, " req.auth ", req.auth)
     console.log("SAMEUSER: ", sameUser, " ADMINUSER: ", adminUser)
     let isPoster = sameUser || adminUser;
     if (!isPoster) {
@@ -124,8 +124,8 @@ exports.updateCharacter = (req, res, next) => {
   character = _.extend(character, fields)
   character.updated = Date.now()
   if (files.photo) {
-    post.photo.data = fs.readFileSync(files.photo.path)
-    post.photo.contentType = files.photo.type
+    character.photo.data = fs.readFileSync(files.photo.path)
+    character.photo.contentType = files.photo.type
   }
     character.save((err, result) => {
       if (err) {

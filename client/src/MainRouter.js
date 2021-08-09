@@ -11,6 +11,8 @@ import Characters from './character/Characters'
 import Profile from './user/Profile'
 import SingleCharacter from "./character/SingleCharacter"
 import Users from './user/Users'
+import EditProfile from './user/EditProfile'
+import EditCharacter from "./character/EditCharacter"
 
 
 const MainRouter = () => {
@@ -26,6 +28,8 @@ const MainRouter = () => {
           <PrivateRoute exact path='/user/:userId' component={Profile}/>
           <Route exact path="/character/:characterId" component={SingleCharacter} />
           <Route exact path='/users' component={Users}/>
+          <PrivateRoute exact path='/user/edit/:userId' component={EditProfile}/>
+          <PrivateRoute exact path="/character/edit/:characterId" component={EditCharacter}/>
         </Switch>
       <Footer/>
     </div>
