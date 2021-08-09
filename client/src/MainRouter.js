@@ -10,6 +10,7 @@ import NewCharacter from "./character/NewCharacter"
 import Characters from './character/Characters'
 import Profile from './user/Profile'
 import SingleCharacter from "./character/SingleCharacter"
+import Users from './user/Users'
 
 
 const MainRouter = () => {
@@ -24,6 +25,7 @@ const MainRouter = () => {
           <Route path='/characters' component={Characters}/>
           <PrivateRoute exact path='/user/:userId' component={Profile}/>
           <Route exact path="/character/:characterId" component={SingleCharacter} />
+          <Route exact path='/users' component={Users}/>
         </Switch>
       <Footer/>
     </div>
