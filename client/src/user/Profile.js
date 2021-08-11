@@ -88,7 +88,7 @@ class Profile extends Component {
     return (
       <div className='container'>
         <h2 className='mt-5 mb-5 text-primary text-center'>
-          <strong>D3PlayrPad Profile</strong>
+          <strong>D3PlayrPad {user.name} Profile</strong>
         </h2>
         <div className='row'>
         <div className='col-md-6'>

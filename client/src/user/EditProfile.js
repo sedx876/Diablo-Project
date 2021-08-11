@@ -190,7 +190,7 @@ class EditProfile extends Component {
     return(
     <div className='container'>
       <h2 className='mt-5 mb-5 text-primary text-center'>
-        <strong>Update Profile</strong>
+        <strong>Update {name} Profile</strong>
       </h2>
 
       <div
