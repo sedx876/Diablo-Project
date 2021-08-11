@@ -13,6 +13,11 @@ import SingleCharacter from "./character/SingleCharacter"
 import Users from './user/Users'
 import EditProfile from './user/EditProfile'
 import EditCharacter from "./character/EditCharacter"
+import NewPost from "./post/NewPost"
+import SinglePost from "./post/SinglePost"
+import EditPost from "./post/EditPost"
+import Admin from "./admin/Admin"
+import Posts from './post/Posts'
 
 
 const MainRouter = () => {
@@ -25,11 +30,16 @@ const MainRouter = () => {
           <Route path='/signin' component={Signin}/>
           <PrivateRoute exact path="/character/create" component={NewCharacter} />
           <Route path='/characters' component={Characters}/>
+          <Route path='/posts' component={Posts}/>
           <PrivateRoute exact path='/user/:userId' component={Profile}/>
           <Route exact path="/character/:characterId" component={SingleCharacter} />
           <Route exact path='/users' component={Users}/>
           <PrivateRoute exact path='/user/edit/:userId' component={EditProfile}/>
           <PrivateRoute exact path="/character/edit/:characterId" component={EditCharacter}/>
+          <PrivateRoute exact path="/post/create" component={NewPost} />
+          <Route exact path="/post/:postId" component={SinglePost} />
+          <PrivateRoute exact path="/post/edit/:postId" component={EditPost}/>
+          <PrivateRoute exact path="/admin" component={Admin} />
         </Switch>
       <Footer/>
     </div>

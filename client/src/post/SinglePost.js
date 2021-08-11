@@ -87,7 +87,7 @@ class SinglePost extends Component {
     const posterName = post.postedBy ? post.postedBy.name : ' Unknown'
     const { like, likes } = this.state
   return (
-    <div className="card-body">
+    <div className="card-body card">
       <img
         src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
         alt={post.title}
