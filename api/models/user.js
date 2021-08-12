@@ -4,6 +4,7 @@ const crypto = require("crypto")
 const { ObjectId } = mongoose.Schema
 const Post = require("./post")
 const Character = require('./character')
+const Hire = require('./hire')
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -95,6 +96,11 @@ userSchema.pre("remove", function(next) {
 
 userSchema.pre("remove", function(next) {
   Character.remove({ postedBy: this._id }).exec()
+  next()
+})
+
+userSchema.pre("remove", function(next) {
+  Hire.remove({ postedBy: this._id }).exec()
   next()
 })
 
