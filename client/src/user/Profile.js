@@ -7,6 +7,7 @@ import DeleteUser from "./DeleteUser"
 import FollowProfileButton from "./FollowProfileButton"
 import ProfileTabs from "./ProfileTabs"
 import { listByUser } from "../character/apiCharacter"
+import { listByUserP } from "../post/apiPost"
 
 
 class Profile extends Component {
@@ -17,7 +18,8 @@ class Profile extends Component {
       redirectToSignin: false,
       following: false,
       error: "",
-      characters: []
+      characters: [],
+      posts: []
     }
   }
 
@@ -52,6 +54,7 @@ class Profile extends Component {
       let following = this.checkFollow(data)
       this.setState({ user: data, following })
       this.loadCharacters(data._id)
+      this.loadPosts(data._id)
     }
   })
   }
@@ -67,6 +70,17 @@ class Profile extends Component {
   })
   }
 
+  loadPosts = userId => {
+    const token = isAuthenticated().token
+    listByUserP(userId, token).then(data => {
+    if (data.error) {
+      console.log(data.error)
+    } else {
+      this.setState({ posts: data })
+    }
+  })
+  }
+
   componentDidMount() {
     const userId = this.props.match.params.userId
     this.init(userId)
@@ -78,7 +92,7 @@ class Profile extends Component {
   }
 
   render() {
-    const { redirectToSignin, user, characters } = this.state
+    const { redirectToSignin, user, characters, posts } = this.state
     if (redirectToSignin) return <Redirect to="/signin" />
     const photoUrl = user._id
       ? `${process.env.REACT_APP_API_URL}/user/photo/${
@@ -119,29 +133,44 @@ class Profile extends Component {
                 >
                   Create Character
                 </Link>
+
+                <Link
+                  className="btn btn-raised btn-info mr-4"
+                  to={`/post/create`}
+                >
+                  Create Post
+                </Link>
+
                 <Link
                   className="btn btn-raised btn-success mr-4"
                   to={`/user/edit/${user._id}`}
                 >
                   Edit Profile
                 </Link>
+
                 <DeleteUser userId={user._id} />
                 <br/>
                 <div className='row'>
-                <div className='col-md-12'>
+                <div className='col'>
                 <p className="card lead text-center bg-light mt-5 mb-5  mr-4 border-primary p-2 text-primary"
                 style={{width: '30rem'}}>
                 <h5 style={{textDecoration: 'underline'}}><strong>About Me:</strong></h5>
                 <strong>{user.about}</strong></p>
                 </div>
                 </div>
+
+                
               </div>
+
+              
             ) : (
               <FollowProfileButton
                 following={this.state.following}
                 onButtonClick={this.clickFollowButton}
               />
             )}
+
+            
         <div className='col-md-6'>
           {isAuthenticated().user && 
           isAuthenticated().user.role === "admin" && (
@@ -170,6 +199,7 @@ class Profile extends Component {
               followers={user.followers}
               following={user.following}
               characters={characters}
+              posts={posts}
             />
             </div>
           </div>

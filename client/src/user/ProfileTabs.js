@@ -4,11 +4,11 @@ import DefaultProfile from "../images/avatar.png"
 
 class ProfileTabs extends Component {
   render() {
-    const { following, followers, characters } = this.props
+    const { following, followers, characters, posts } = this.props
       return (
         <div>
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-3">
               <h3 className="text-primary text-center">
                 {followers.length} <strong>Followers</strong>
               </h3>
@@ -43,7 +43,7 @@ class ProfileTabs extends Component {
                     </div>
                     ))}
             </div>
-            <div className="col-md-4">
+            <div className="col-md-3">
               <h3 className="text-primary text-center">
                 {following.length} <strong>Following</strong>
               </h3>
@@ -78,7 +78,7 @@ class ProfileTabs extends Component {
                 </div>
               ))}
             </div>
-              <div className="col-md-4">
+              <div className="col-md-3">
                 <h3 className="text-primary">{characters.length} <strong>Builds</strong></h3>
                   <hr />
                     {characters.map((character, i) => (
@@ -91,8 +91,33 @@ class ProfileTabs extends Component {
                       </Link>
                 </div>
               </div>
+
+              
+
+              
             ))}
           </div>
+          
+          <div className="col-md-3">
+                <h3 className="text-primary">{posts.length} <strong>Posts</strong></h3>
+                  <hr />
+                    {posts.map((post, i) => (
+                    <div key={i}>
+                    <div>
+                      <Link to={`/post/${post._id}`}>
+                    <div>
+                      <p className="lead">{post.title}</p>
+                  </div>
+                      </Link>
+                </div>
+              </div>
+
+              
+
+              
+            ))}
+          </div>
+          
         </div>
       </div>
     )

@@ -34,7 +34,7 @@ export const singlePost = postId => {
     .catch(err => console.log(err))
 }
 
-export const listByUser = (userId, token) => {
+export const listByUserP = (userId, token) => {
   return fetch(`${process.env.REACT_APP_API_URL}/posts/by/${userId}`, {
     method: "GET",
     headers: {

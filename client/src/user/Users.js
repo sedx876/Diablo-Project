@@ -26,9 +26,9 @@ class Users extends Component {
     <div className="row">
       {users.map((user, i) => (
     <div className="card col-md-4 mb-2" key={i}>
-      <h5 className="card-title text-primary text-center"><strong>{user.name}</strong></h5>
+      <h5 className="card-title text-success text-center"><strong>{user.name}</strong></h5>
       <img
-        style={{ height: "300px", width: "auto" }}
+        style={{ height: "200px", width: "auto" }}
         className="img-thumbnail"
         src={`${process.env.REACT_APP_API_URL}/user/photo/${
           user._id
@@ -37,7 +37,7 @@ class Users extends Component {
         alt={user.name}
       />
       <div className="card-body">
-        <p className="card-text">{user.email}</p>
+        {/* <p className="card-text">{user.email}</p> */}
         <p>
         <strong>Joined: </strong> 
         {`${new Date(user.created).toDateString()}`}
