@@ -20,6 +20,7 @@ import Admin from "./admin/Admin"
 import Posts from './post/Posts'
 import NewHire from "./hire/NewHire"
 import Hires from './hire/Hires'
+import SingleHire from "./hire/SingleHire"
 
 
 const MainRouter = () => {
@@ -44,6 +45,7 @@ const MainRouter = () => {
           <PrivateRoute exact path="/admin" component={Admin} />
           <PrivateRoute exact path="/hire/create" component={NewHire} />
           <Route path='/hires' component={Hires}/>
+          <Route exact path="/hire/:hireId" component={SingleHire} />
         </Switch>
       <Footer/>
     </div>
