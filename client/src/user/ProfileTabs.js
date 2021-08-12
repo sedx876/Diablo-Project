@@ -34,7 +34,7 @@ class ProfileTabs extends Component {
                             alt={person.name}
                           />
                           <div>
-                            <p className="lead">
+                            <p className="lead text-secondary">
                               {person.name}
                             </p>
                           </div>
@@ -69,7 +69,7 @@ class ProfileTabs extends Component {
                       alt={person.name}
                     />
                     <div>
-                      <p className="lead">
+                      <p className="lead text-secondary">
                         {person.name}
                       </p>
                     </div>
@@ -86,7 +86,7 @@ class ProfileTabs extends Component {
                     <div>
                       <Link to={`/character/${character._id}`}>
                     <div>
-                      <p className="lead">{character.title}</p>
+                      <p className="lead text-secondary">{character.title}</p>
                   </div>
                       </Link>
                 </div>
@@ -106,7 +106,7 @@ class ProfileTabs extends Component {
                     <div>
                       <Link to={`/post/${post._id}`}>
                     <div>
-                      <p className="lead">{post.title}</p>
+                      <p className="lead text-secondary">{post.title}</p>
                   </div>
                       </Link>
                 </div>
