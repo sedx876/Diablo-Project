@@ -10,7 +10,9 @@ const Footer = () => {
         <Row>
 
           <Col className='text-center text-dark' id='foot'>
+          <Link to='/about' className='text-center text-dark'>
             About
+            </Link>
           </Col>
 
           <Col className='text-center text-dark' id='foot'>

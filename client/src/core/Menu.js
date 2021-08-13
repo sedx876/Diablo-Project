@@ -6,7 +6,7 @@ import '../styles/menu.css'
 
 const isActive = (history, path) => {
   if (history.location.pathname === path) return { color: '#6f42c1' };
-  else return { color: '#ea39b8' };
+  else return { color: '#170229' };
 }
 
 const Menu = ({history}) => {

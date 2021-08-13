@@ -1,0 +1,90 @@
+#about{
+  padding: 30px;
+}
+
+#aboutTitle{
+  text-align: center;
+  text-decoration: underline;
+  font-size: 50px;
+  font-weight: bold;
+  color: var(--redAccent);
+  text-shadow: 1px 1px 0px #003032;
+  letter-spacing: 1px;
+}
+
+#aboutPara{
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-family: var(--subFont);
+  text-shadow: 1px 1px 0px var(--redAccent);
+  list-style-type: none;
+}
+
+#aboutImgDiv{
+  display: flex;
+  justify-content: center;
+}
+
+#d3Mal{
+  height: 500px;
+  width: 500px;
+  box-shadow: 10px 5px 5px #003032;
+}
+
+#aboutSubTitle{
+  text-align: center;
+  text-decoration: underline;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--redAccent);
+  text-shadow: 1px 1px 0px #003032;
+  letter-spacing: 2px;
+}
+
+#gamePlay{
+  height: 550px;
+  width: 700px;
+  box-shadow: 10px 5px 5px #003032;
+}
+
+#wDoctor{
+  box-shadow: 10px 5px 5px #003032;
+}
+
+#barb{
+  height: 500px;
+  width: 500px;
+  box-shadow: 10px 5px 5px #003032;
+}
+
+#wiz{
+  box-shadow: 10px 5px 5px #003032;
+}
+
+#monks{
+  height: 500px;
+  width: 600px;
+  box-shadow: 10px 5px 5px #003032;
+}
+
+#dem{
+  height: 500px;
+  width: 600px;
+  box-shadow: 10px 5px 5px #003032;
+}
+
+#sader{
+  height: 500px;
+  width: 600px;
+  box-shadow: 10px 5px 5px #003032;
+}
+
+#mancer{
+  box-shadow: 10px 5px 5px #003032;
+}
+
+#tram{
+  height: 500px;
+  width: 600px;
+  box-shadow: 10px 5px 5px #003032;
+}

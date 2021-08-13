@@ -23,6 +23,7 @@ import Hires from './hire/Hires'
 import SingleHire from "./hire/SingleHire"
 import NameGenerator from './nameGenerator/NameGenerator'
 import Links from './core/Links'
+import About from './core/About'
 
 
 const MainRouter = () => {
@@ -50,6 +51,7 @@ const MainRouter = () => {
           <Route exact path="/hire/:hireId" component={SingleHire} />
           <Route exact path="/namegen" component={NameGenerator} />
           <Route exact path="/links" component={Links} />
+          <Route exact path="/about" component={About} />
         </Switch>
       <Footer/>
     </div>
