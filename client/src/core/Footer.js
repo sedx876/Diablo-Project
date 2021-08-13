@@ -1,6 +1,7 @@
 import React from 'react'
 import '../styles/footer.css'
 import { Container, Row, Col  } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -17,7 +18,9 @@ const Footer = () => {
           </Col>
 
           <Col className='text-center text-dark' id='foot'>
-            Links
+            <Link to='/links' className='text-center text-dark'>
+              Links
+            </Link>
           </Col>
 
           <Col className='text-center text-dark' id='foot'>

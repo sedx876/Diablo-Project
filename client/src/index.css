@@ -42,3 +42,9 @@ a:hover {
 a:active {
   text-decoration: underline;
 } 
+
+#nameGenBtn{
+  height: 50px;
+  width: 150px;
+  
+}
