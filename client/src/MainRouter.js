@@ -21,6 +21,7 @@ import Posts from './post/Posts'
 import NewHire from "./hire/NewHire"
 import Hires from './hire/Hires'
 import SingleHire from "./hire/SingleHire"
+import NameGenerator from './nameGenerator/NameGenerator'
 
 
 const MainRouter = () => {
@@ -46,6 +47,7 @@ const MainRouter = () => {
           <PrivateRoute exact path="/hire/create" component={NewHire} />
           <Route path='/hires' component={Hires}/>
           <Route exact path="/hire/:hireId" component={SingleHire} />
+          <Route exact path="/namegen" component={NameGenerator} />
         </Switch>
       <Footer/>
     </div>
